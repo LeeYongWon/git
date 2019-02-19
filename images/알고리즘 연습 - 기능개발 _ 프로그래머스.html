@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://programmers.co.kr/learn/courses/30/lessons/42586?language=java -->
+<html lang="ko" xml:lang="ko" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<title>알고리즘 연습 - 기능개발 | 프로그래머스</title>
+<link rel="shortcut icon" type="image/x-icon" href="https://programmers.co.kr/assets/icons/favicon-40b78633b6556a68c3da8e2125c31512fbd01d09906ab76c8a8ff289e494cadb.png">
+<link rel="apple-touch-icon" type="image/png" href="https://programmers.co.kr/assets/icons/apple-icon-6eafc2c4c58a21aef692d6e44ce99d41f999c71789f277317532d0a9c6db8976.png">
+<meta name="keywords" content="코딩 교육, 코딩, 프로그래밍, 실습, 생활코딩, 알고리즘, java">
+<meta property="fb:app_id" content="339079816467879">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="알고리즘 연습 - 기능개발 | 프로그래머스">
+<meta name="twitter:image" property="og:image" itemprop="image primaryImageOfPage" content="https://image.freepik.com/free-vector/landing-page-template-for-a-website_23-2147782747.jpg">
+<meta name="twitter:url" property="og:url" content="https://programmers.co.kr/learn/courses/30/lessons/42586">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="프로그래머스">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="ijRJgwDwDkl0gKphAJqiD6Q9blavmEA262rkeUlYTwSutP+ZSnBMOzGzXWUmhnxtXyMlK0vSuL4kxu5/2Sx3Fg==">
+<meta name="action-cable-url" content="wss://programmers.co.kr:8080/cable">
+
+<link rel="stylesheet" media="all" href="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/application-099b674d5893dea8a9cb35a344fedb38dfacb60819245793dd2c8f0f8452b92e.css">
+
+
+  <!-- Google Analytics -->
+<script src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/osd.js.다운로드"></script><script src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/ca-pub-3622640291758278.js.다운로드"></script><script async="" src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/gtm.js.다운로드"></script><script src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/2050250308523590" async=""></script><script async="" src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/fbevents.js.다운로드"></script><script async="" src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/analytics.js.다운로드"></script><script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-72680702-5', 'auto', {allowLinker: true, userId: 'Guest-6800856'});
+  ga('linker:autoLink', ['programmers.co.kr', 'www.programmers.co.kr', 'business.programmers.co.kr']);
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+  <!-- Facebook Pixel Code -->
+<script>
+  !function (f, b, e, v, n, t, s) {
+    if (f.fbq) return;
+    n = f.fbq = function () {
+      n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = !0;
+    n.version = '2.0';
+    n.queue = [];
+    t = b.createElement(e);
+    t.async = !0;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s)
+  }(window, document, 'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2050250308523590');
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2050250308523590&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+  <!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+  w[l] = w[l] || [];
+  w[l].push({
+    'gtm.start':
+      new Date().getTime(), event: 'gtm.js'
+  });
+  var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+  j.async = true;
+  j.src =
+    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+  f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-NMDXJHR');</script>
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMDXJHR"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager -->
+
+  <script async="" src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/f.txt"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-3622640291758278",
+        enable_page_level_ads: true
+    });
+</script>
+
+
+<style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style><style type="text/css">.cloudinary-thumbnails { list-style: none; margin: 10px 0; padding: 0 } .cloudinary-thumbnails:after { clear: both; display: block; content: '' } .cloudinary-thumbnail { float: left; padding: 0; margin: 0 15px 5px 0; display: none } .cloudinary-thumbnail.active { display: block } .cloudinary-thumbnail img { border: 1px solid #01304d; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px } .cloudinary-thumbnail span { font-size: 11px; font-family: Arial, sans-serif; line-height: 14px; border: 1px solid #aaa; max-width: 150px; word-wrap: break-word; word-break: break-all; display: inline-block; padding: 3px; max-height: 60px; overflow: hidden; color: #999; } .cloudinary-delete { vertical-align: top; font-size: 13px; text-decoration: none; padding-left: 2px; line-height: 8px; font-family: Arial, sans-serif; color: #01304d }.cloudinary-button { color: #fefeff; text-decoration: none; font-size: 18px; line-height: 28px; height: 28x; border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; font-weight: normal; text-decoration: none;   display: inline-block; padding: 4px 30px 4px 30px; background: #0284cf; font-family: Helvetica, Arial, sans-serif;   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAyODRjZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMjU5OGIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);   background: -moz-linear-gradient(top,  #0284cf 0%, #02598b 100%);   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0284cf), color-stop(100%,#02598b));   background: -webkit-linear-gradient(top,  #0284cf 0%,#02598b 100%);   background: -o-linear-gradient(top,  #0284cf 0%,#02598b 100%);   background: -ms-linear-gradient(top,  #0284cf 0%,#02598b 100%);   background: linear-gradient(to bottom,  #0284cf 0%,#02598b 100%);   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0284cf', endColorstr='#02598b',GradientType=0 ); }.cloudinary-button:hover { background: #02598b;   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAyNTk4YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMjg0Y2YiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);   background: -moz-linear-gradient(top,  #02598b 0%, #0284cf 100%);   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#02598b), color-stop(100%,#0284cf));   background: -webkit-linear-gradient(top,  #02598b 0%,#0284cf 100%);   background: -o-linear-gradient(top,  #02598b 0%,#0284cf 100%);   background: -ms-linear-gradient(top,  #02598b 0%,#0284cf 100%);   background: linear-gradient(to bottom,  #02598b 0%,#0284cf 100%);   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02598b', endColorstr='#0284cf',GradientType=0 ); </style><link rel="preload" href="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/f(1).txt" as="script"><script type="text/javascript" src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/f(1).txt"></script><link rel="preload" href="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/f(2).txt" as="script"><script type="text/javascript" src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/f(2).txt"></script><link rel="preload" href="https://pagead2.googlesyndication.com/pagead/js/r20190206/r20190131/show_ads_impl.js" as="script"></head>
+<body class="learn-lessons learn-lessons-show" data-ns="Learn" data-controller="lessons" data-action="show" data-defaultlocale="ko" data-locale="ko">
+  <div class="navbar navbar-inverse navbar-breadcrumb">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="https://programmers.co.kr/">
+        <img alt="logo" width="24" src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/bi-symbol-light-49a242793b7a8b540cfc3489b918e3bb2a6724f1641572c14c575265d7aeea38.png">
+</a>      <ol class="breadcrumb"><li><a href="https://programmers.co.kr/learn/challenges">코딩테스트 연습</a></li><li><a href="https://programmers.co.kr/learn/challenges?selected_part_id=12081">스택/큐</a></li><li class="active">기능개발</li></ol>
+  </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right navbar-account">
+        <li><a onclick="Learn.lessons.challengeable.startTour(true)" id="help" href="https://programmers.co.kr/learn/courses/30/lessons/42586?language=java#">도움말</a></li>
+        <li><a data-remote="true" href="https://programmers.co.kr/compile_options">컴파일 옵션</a></li>
+      </ul>
+    </div>
+</div>
+
+
+
+<div class="main theme-dark">
+  
+  <div class="lesson-content" data-course-slug="알고리즘-연습" data-course-id="30" data-lesson-id="42586" data-lesson-type="Challenge" data-next-lesson-id="">
+
+    
+<ul class="challenge-nav nav nav-tabs nav-tabs-dark task-tab" id="tab" role="tablist">
+  <li class="algorithm-nav-link algorithm-title">
+    기능개발
+  </li>
+
+  
+<li class="challenge-settings nav-item pull-right">
+  <div class="btn-group-theme btn-group" data-toggle="buttons">
+      <label class="btn btn-md btn-dark-outline active">
+        <input type="radio" name="themes" autocomplete="off" checked="" data-toggle="button" data-theme="dark">dark
+      </label>
+      <label class="btn btn-md btn-dark-outline ">
+        <input type="radio" name="themes" autocomplete="off" data-toggle="button" data-theme="light">light
+      </label>
+  </div>
+
+    <div data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="코드 에디터의 단축키를 설정하는 옵션입니다. 선호하는 에디터 옵션이 없다면 sublime을 선택해 주세요." data-original-title="" title="">
+      <div class="btn-group-keymap btn-group" data-toggle="buttons">
+          <label class="btn btn-md btn-dark-outline active">
+            <input type="radio" name="keymaps" autocomplete="off" checked="" data-keymap="sublime">sublime
+          </label>
+          <label class="btn btn-md btn-dark-outline ">
+            <input type="radio" name="keymaps" autocomplete="off" data-keymap="vim">vim
+          </label>
+          <label class="btn btn-md btn-dark-outline ">
+            <input type="radio" name="keymaps" autocomplete="off" data-keymap="emacs">emacs
+          </label>
+      </div>
+    </div>
+
+    <div class="dropdown-language animated-dropdown" id="tour7">
+      <button class="btn btn-md btn-dark dropdown-toggle" type="button" data-toggle="dropdown">
+        Java
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+        <li>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42586?language=cpp">C++</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42586?language=csharp">C#</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42586?language=go">Go</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42586?language=java">Java</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42586?language=javascript">JavaScript</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42586?language=kotlin">Kotlin</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42586?language=python">Python2</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42586?language=python3">Python3</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42586?language=ruby">Ruby</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42586?language=scala">Scala</a>
+            <a class="dropdown-item" href="https://programmers.co.kr/learn/courses/30/lessons/42586?language=swift">Swift</a>
+        </li>
+      </ul>
+    </div>
+</li>
+
+</ul>
+
+<div class="challenge-content lesson-algorithm-main-section  " data-challengeable-id="2543" data-challengeable-type="algorithm" data-algorithm-type="standard" data-language="java" data-signed-in="false" data-challenge-web-evaluation-code="">
+    
+
+
+<div class="main-section">
+  <div class="guide-section" id="tour2" style="width: calc(40% - 12px);">
+    <h6 class="guide-section-title">문제 설명</h6>
+    <div class="markdown solarized-dark"><p>프로그래머스 팀에서는 기능 개선 작업을 수행 중입니다. 각 기능은 진도가 100%일 때 서비스에 반영할 수 있습니다.</p>
+
+<p>또, 각 기능의 개발속도는 모두 다르기 때문에 뒤에 있는 기능이 앞에 있는 기능보다 먼저 개발될 수 있고, 이때 뒤에 있는 기능은 앞에 있는 기능이 배포될 때 함께 배포됩니다.</p>
+
+<p>먼저 배포되어야 하는 순서대로 작업의 진도가 적힌 정수 배열 progresses와 각 작업의 개발 속도가 적힌 정수 배열 speeds가 주어질 각 배포마다 몇 개의 기능이 배포되는지를 return 하도록 solution 함수를 완성하세요.</p>
+
+<h5>제한 사항</h5>
+
+<ul>
+<li>작업의 개수(progresses, speeds배열의 길이)는 100개 이하입니다.</li>
+<li>작업 진도는 100 미만의 자연수입니다.</li>
+<li>작업 속도는 100 이하의 자연수입니다.</li>
+<li>배포는 하루에 한 번만 할 수 있으며, 하루의 끝에 이루어진다고 가정합니다. 예를 들어 진도율이 95%인 작업의 개발 속도가 하루에 4%라면 배포는 2일 뒤에 이루어집니다.</li>
+</ul>
+
+<h5>입출력 예</h5>
+<table class="table">
+        <thead><tr>
+<th>progresses</th>
+<th>speeds</th>
+<th>return</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td>[93,30,55]</td>
+<td>[1,30,5]</td>
+<td>[2,1]</td>
+</tr>
+</tbody>
+      </table>
+<h5>입출력 예 설명</h5>
+
+<p>첫 번째 기능은 93% 완료되어 있고 하루에 1%씩 작업이 가능하므로 7일간 작업 후 배포가 가능합니다.<br>
+두 번째 기능은 30%가 완료되어 있고 하루에 30%씩 작업이 가능하므로 3일간 작업 후 배포가 가능합니다. 하지만 이전 첫 번째 기능이 아직 완성된 상태가 아니기 때문에 첫 번째 기능이 배포되는 7일째 배포됩니다.<br>
+세 번째 기능은 55%가 완료되어 있고 하루에 5%씩 작업이 가능하므로 9일간 작업 후 배포가 가능합니다. </p>
+
+<p>따라서 7일째에 2개의 기능, 9일째에 1개의 기능이 배포됩니다.</p>
+</div>
+  </div>
+  <div class="gutter gutter-horizontal" style="width: 24px; background-image: url(&quot;/assets/img-grippie-vertical-86e641691e88be56a100b80e3d437ae6effea08c189fdbdb2396825486763a15.png&quot;);"></div><div class="run-section" style="width: calc(60% - 12px);">
+    <div id="tour3" class="code-section" onkeyup="Hera.tryoutChallenges.resizeEditor(this);" style="height: calc(60% - 7px);">
+      <div class="editor">
+        <ul class="nav nav-pills editor-nav-pills tap-form">
+    <input type="hidden" name="initial_code_7574" id="initial_code_7574" value="class Solution {
+    public int[] solution(int[] progresses, int[] speeds) {
+        int[] answer = {};
+        return answer;
+    }
+}">
+    <input id="7574" data-type="code" data-language="java" type="hidden" value="class Solution {
+    public int[] solution(int[] progresses, int[] speeds) {
+        int[] answer = {};
+        return answer;
+    }
+}">
+    <li class="nav-item">
+      <a href="https://programmers.co.kr/learn/courses/30/lessons/42586?language=java#" class="btn-tab nav-link active" data-id="7574" data-language="java">
+        Solution.java </a>
+    </li>
+</ul>
+        
+          <textarea hidden="" id="code" name="code" style="display: none;">class Solution {
+    public int[] solution(int[] progresses, int[] speeds) {
+        int[] answer = {};
+        return answer;
+    }
+}</textarea><div class="CodeMirror cm-s-tomorrow-night-bright CodeMirror-wrap CodeMirror-focused"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 98px; left: 370px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 48px; margin-bottom: -8px; border-right-width: 22px; min-height: 176px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style="visibility: hidden;"><div class="CodeMirror-cursor" style="left: 322px; top: 72px; height: 24px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div class="" style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -48px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">class</span> <span class="cm-def">Solution</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -48px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-type">int</span>[] <span class="cm-variable">solution</span>(<span class="cm-type">int</span>[] <span class="cm-variable">progresses</span>, <span class="cm-type">int</span>[] <span class="cm-variable">speeds</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -48px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-type">int</span>[] <span class="cm-variable">answer</span> <span class="cm-operator">=</span> {};</span></pre></div><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -48px; width: 48px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -48px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-type">int</span>[] <span class="cm-variable">progresses</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-type">int</span>[<span class="cm-number">99</span>];</span></pre></div><div style="position: relative;" class=""><div class="CodeMirror-gutter-wrapper" style="left: -48px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">answer</span>;</span></pre></div><div style="position: relative;" class=""><div class="CodeMirror-gutter-wrapper" style="left: -48px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div><div class="" style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -48px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 22px; width: 1px; border-bottom: 0px solid transparent; top: 176px;"></div><div class="CodeMirror-gutters" style="height: 198px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 48px;"></div></div></div></div>
+      </div>
+    </div>
+
+    <div class="gutter gutter-vertical" style="height: 14px; background-image: url(&quot;/assets/img-grippie-horizon-9ee873f74b6c8cb40d35bccfb7b34fd12c6c78dccf964c22674c3ae8ed3995be.png&quot;);"></div><div class="output-section" id="tour6" style="height: calc(40% - 7px);">
+      <div class="tab-header">
+        <div id="output-title" class="output-title" data-toggle="tab">
+          실행 결과 &nbsp;&nbsp;&nbsp;
+            <a id="stop-button" class="btn btn-sm btn-danger" href="https://programmers.co.kr/learn/courses/30/lessons/42586?language=java#">실행 중지</a>
+          <span id="output-spinner" class="spinner hidden">
+            <span class="bounce1"></span>
+            <span class="bounce2"></span>
+            <span class="bounce3"></span>
+          </span>
+        </div>
+      </div>
+      <div class="console tab-content">
+        <div id="output" class="console-output tab-pane fade in active">
+          실행 결과가 여기에 표시됩니다.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="button-section">
+  <div class="testcase-button">
+    <a id="btn-show-question" class="btn btn-dark" href="https://programmers.co.kr/learn/courses/30/lessons/42586/questions">질문하기 (9)</a>
+      <a class="btn btn-dark btn-block" data-remote="true" href="https://programmers.co.kr/challenge_algorithms/2543/custom_testcases?lesson_id=42586">
+        <div class="flex-normal flex-space-between">
+          테스트 케이스 추가하기<svg class=""><use xlink:href="/assets/svg-defs-5cbe3bf1565cc8cbe9402d963d21efe44654ca738fd64ae23fddfc104ff44827.svg#ic-add"></use></svg>
+        </div>
+</a>  </div>
+
+  <div class="func-buttons">
+
+      <a class="btn btn-primary" href="https://programmers.co.kr/users/login">로그인하기</a>
+  </div>
+</div>
+</div>
+  </div>
+
+</div>
+
+
+
+<div class="modal fade" id="modal-dialog" tabindex="-1" role="dialog" aria-hidden="true"></div>
+
+<script src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/application-37c308a52184bf34d6e21c5a8c61d6eeeac41fddb77e12292024071a76af0c0f.js.다운로드"></script><div class="tui-tooltip" style="display: none;"><div class="arrow"></div><span class="text"></span></div>
+<script>
+//<![CDATA[
+window.addEventListener('load', function() {});
+//]]>
+</script>
+
+  <script src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/all.js.다운로드" type="text/javascript">
+    cloudinary.setCloudName('eightcruz');
+  </script>
+
+  <script src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/loader.js.다운로드" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    Rollbar.configure({
+      payload: {
+        environment: "production",
+        
+      }
+    });
+  </script>
+
+
+
+<noscript>
+  이 사이트의 기능을 모두 활용하기 위해서는 자바스크립트를 활성화할 필요가 있습니다.
+  <a href="http://www.enable-javascript.com/ko/" target="_blank">
+    브라우저에서 자바스크립트를 활성화하는 방법</a>을 참고하세요.
+</noscript>
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0px;width:0px;height:0px;" src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/saved_resource.html"></iframe></ins></ins></ins><div id="snackbar-container"></div><iframe id="google_osd_static_frame_2834060942979" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/saved_resource(1).html"></iframe></body><iframe id="google_shimpl" style="display: none;" src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/saved_resource(2).html"></iframe><iframe id="google_esf" name="google_esf" src="./알고리즘 연습 - 기능개발 _ 프로그래머스_files/zrt_lookup.html" data-ad-client="ca-pub-3622640291758278" style="display: none;"></iframe></html>
