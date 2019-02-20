@@ -17,7 +17,7 @@
     h1 {
       font-size: 60px;
       text-align: center;
-      text-align: left;
+      
       border-bottom: 1px solid black;
       margin: 0;
       padding: 20px;
@@ -28,21 +28,40 @@
       border-right: 1px solid black;
       width: 100px;
       margin: 0;
-      padding:20px;
+      padding: 20px;
 
     }
 
-    #grid{
-      display:grid;
-      grid-template-columns:150px 1fr;
-    }
-    ol{
-      padding-left:33px;
-    }
-    #article{
-      padding-left:25px;
+    #grid {
+      display: grid;
+      grid-template-columns: 150px 1fr;
     }
 
+    ol {
+      padding-left: 33px;
+    }
+
+    #article {
+      padding-left: 25px;
+    }
+
+    @media(max-width:800px) {
+      #grid {
+        display: block;
+      }
+
+      ol {
+
+        border-right: none;
+      }
+
+      h1 {
+        border-bottom:none;
+      }
+
+
+
+    }
   </style>
 </head>
 
