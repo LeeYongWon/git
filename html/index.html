@@ -4,37 +4,44 @@
   <meta charset="utf-8">
   <title>Web</title>
   <style>
-    body{
-      margin:0;
+    body {
+      margin: 0;
     }
+
     a {
-      color:black;
+      color: black;
       text-decoration: none;
 
     }
 
     h1 {
       font-size: 60px;
-      text-align:center;
+      text-align: center;
       text-align: left;
-      border-bottom:1px solid black;
-      margin:0;
+      border-bottom: 1px solid black;
+      margin: 0;
+      padding: 20px;
+
+    }
+
+    ol {
+      border-right: 1px solid black;
+      width: 100px;
+      margin: 0;
       padding:20px;
 
+    }
+
+    #grid{
+      display:grid;
+      grid-template-columns:150px 1fr;
     }
     ol{
-      border-right:1px solid black;
-      width:100px;
-      margin:0;
-      padding:20px;
+      padding-left:33px;
     }
-    #active{
-      color:red;
+    #article{
+      padding-left:25px;
     }
-    .saw{
-      color:gray;
-    }
-
 
   </style>
 </head>
@@ -42,29 +49,24 @@
 <body>
   <h1><a href="index.html">Web</a></h1>
 
-  <ol>
-    <li><a href="html.html"class="saw">HTML</a></li>
-    <li><a href="css.html"class="saw" id="active">CSS</a></li>
-    <li><a href="javascript.html">JAVASCRIPT</a></li>
-  </ol>
+  <div id="grid">
+    <ol>
+      <li><a href="html.html">HTML</a></li>
+      <li><a href="css.html">CSS</a></li>
+      <li><a href="javascript.html">JAVASCRIPT</a></li>
+    </ol>
+    <div id="article">
+      <h2>WEB</h2>
+      <p>
+        월드 와이드 웹(World Wide Web, WWW, W3)은 인터넷에 연결된 컴퓨터들을 통해 사람들이 정보를 공유할 수 있는 전 세계적인 정보 공간을 말한다. 간단히 웹(Web)이라 부르는 경우가 많다. 이 용어는 인터넷과 동의어로 쓰이는 경우가 많으나 엄격히 말해 서로 다른 개념이다. 웹은 전자 메일과 같이 인터넷 상에서 동작하는 하나의 서비스일 뿐이다. 그러나 1993년 이래로 웹은 인터넷 구조의 절대적 위치를 차지하고
+        있다.
 
-  <!-- <h2><a href="index.html"><font color="red">Web</a></h2>
-  <iframe width="550" height="315" src="http:www.youtube.com/embed/jSJM9i0iQ1g" frameborder="0" allowfullscreen></iframe>
+        인터넷에서 HTTP 프로토콜, 하이퍼텍스트, HTML형식 등을 사용하여 그림과 문자를 교환하는 전송방식을 말하기도 한다.
 
-  <ul>
-    <li><a href="html.html"<font color="red">HTML</a></li>
-    <li><a href="css.html"><font color="red">CSS</a></li>
-    <li><a href="javascript.html"><font color="red">JAVASCRIPT</a></li>
-  </ul> -->
+      </p>
 
-  <p>
-    월드 와이드 웹(World Wide Web, WWW, W3)은 인터넷에 연결된 컴퓨터들을 통해 사람들이 정보를 공유할 수 있는 전 세계적인 정보 공간을 말한다. 간단히 웹(Web)이라 부르는 경우가 많다. 이 용어는 인터넷과 동의어로 쓰이는 경우가 많으나 엄격히 말해 서로 다른 개념이다. 웹은 전자 메일과 같이 인터넷 상에서 동작하는 하나의 서비스일 뿐이다. 그러나 1993년 이래로 웹은 인터넷 구조의 절대적 위치를 차지하고 있다.
-
-    인터넷에서 HTTP 프로토콜, 하이퍼텍스트, HTML형식 등을 사용하여 그림과 문자를 교환하는 전송방식을 말하기도 한다.
-
-  </p>
-
-  <p>
+    </div>
+  </div>
 
 
 </body>
