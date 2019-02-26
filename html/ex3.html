@@ -10,15 +10,23 @@
 
 <body>
   <h1><a href="index.html">Web</a></h1>
-  <input type="button" value="night" onclick="
-  document.querySelector('body').style.backgroundColor ='black';
-  document.querySelector('body').style.color ='white';
-    ">
-  <input type="button" value="day" onclick="
-    document.querySelector('body').style.backgroundColor ='white';
-    document.querySelector('body').style.color ='black';
 
+  <input type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if(this.value === 'night'){
+      target.style.backgroundColor = 'black';
+      target.style.color = 'whtie';
+      this.value = 'day';
+    }else{
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+      this.value = 'night';
+    }
     ">
+
+
+
+
 
   <div id="grid">
     <ol>
@@ -26,6 +34,7 @@
       <li><a href="css.html">CSS</a></li>
       <li><a href="javascript.html">JAVASCRIPT</a></li>
     </ol>
+
     <div id="article">
       <h2>WEB</h2>
       <p>
@@ -38,6 +47,23 @@
 
     </div>
   </div>
+
+  <input type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if(this.value === 'night'){
+      target.style.backgroundColor = 'black';
+      target.style.color = 'whtie';
+      this.value = 'day';
+    }else{
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+      this.value = 'night';
+    }
+    ">
+
+
+
+
 </body>
 
 </html>
