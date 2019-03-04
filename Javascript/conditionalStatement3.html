@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    /*id 값으로 yongwon, doong, kong 중의 하나를 사용하고 비밀번호는 1234를 입력하면
+    right 이 외의 경우에는 wrong을 출력하는 예를 만들어라
+    */
+    var id = prompt('아이디를 입력하세요');
+    var password = prompt('비밀번호를 입력하세요');
+
+    if((id === 'yongwon' || id === 'doong' || id === 'kong') && password==='1234'){
+      alert('right');
+    }else if((id === 'yongwon' || id === 'doong' || id === 'kong') && password !== '1234'){
+      alert('비밀번호를 확인하세요.');
+    }else if((id !== 'yongwon' || id !== 'doong' || id !== 'kong') && password === '1234'){
+      alert('아이디를 확인하세요')
+    }else if((id !== 'yongwon' || id !== 'doong' || id !== 'kong') && password !== '1234'){
+      alert('아이디와 비밀번호를 확인하세요');
+    }
+
+  </script>
+</body>
+
+</html>
