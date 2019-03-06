@@ -17,11 +17,16 @@
     function numbering() {
       var i = 0;
       while (i < 10) {
-        document.write(i);
+        document.write(i+'<br/>');
         i++;
+      
       }
     }
     numbering();
+
+    for(var i=0; i<10; i++){
+      numbering(i);
+   }
   </script>
 </body>
 
