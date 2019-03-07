@@ -38,6 +38,18 @@
 
       }
       second();
+
+      function outerFunction() {
+         const outer = 'I\'m the outer function';
+
+         function innerFunction() {
+            const inner = 'I\'m the inner function!';
+            alert(outer);
+         }
+         innerFunction();
+
+      }
+      outerFunction();
    </script>
 
 </body>
