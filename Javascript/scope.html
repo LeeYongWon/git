@@ -8,17 +8,36 @@
 
 <body>
    <script>
-         var vscope = 'global';
-         function fscope(){
-            var vscope = 'local';
-            alert(vscope);
-         }
-         function fscope2(){
-   
-            alert(vscope);
-         }
-         fscope();
-         fscope2();
+      var vscope = 'global';
+
+      function fscope() {
+         var vscope = 'local';
+         alert(vscope);
+      }
+
+      function fscope2() {
+
+         alert(vscope);
+      }
+      fscope();
+      fscope2();
+
+      const hello = 'Hello css';
+
+      function sayHello() {
+         console.log(hello);
+      }
+
+      function first() {
+         const firstFunctionVariable = 'I’m part of first'
+         alert(firstFunctionVariable);
+      }
+
+      function second() {
+         first()
+
+      }
+      second();
    </script>
 
 </body>
