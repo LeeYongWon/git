@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <title></title>
+</head>
+
+<body>
+   <script>
+      function cal(func, num) {
+         return func(num);
+      }
+
+      function increase(num) {
+         return num + 1;
+      }
+
+      function decrease(num){
+         return num-1;
+      }
+
+      alert(cal(increase, 1));
+      alert(cal(decrease, 2));
+   </script>
+</body>
+
+</html>
