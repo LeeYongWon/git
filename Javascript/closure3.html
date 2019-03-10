@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <title></title>
+</head>
+
+<body>
+   <script>
+      function factory_movie(title) {
+         //객체를 리턴한다.
+         return {
+            get_title: function() {
+               return title;
+            },
+            set_title: function(_title) {
+               if (typeof _title === 'string') {
+                  title = _title
+               } else {
+                  alert('문자열을 입력하세요');
+               }
+
+            }
+         }
+      }
+      //리턴 된 객체를 변수에 담는다
+      var ghost = factory_movie('Ghost in the shell');
+      var matrix = factory_movie('Matrix');
+      document.write(ghost.get_title());
+      document.write(matrix.get_title());
+
+      matrix.set_title('공각기동대');
+
+      alert(matrix.get_title());
+   </script>
+</body>
+
+</html>
