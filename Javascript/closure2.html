@@ -8,17 +8,14 @@
 
 <body>
    <script>
-      function outter() {
-
-         function inner() {
-            var title = 'coding everybody';
+      function outter(){
+         var title='coding everybody';
+         return function(){
             alert(title);
          }
-
-         inner();
       }
-
-      outter();
+   var inner=outter();
+   inner();
    </script>
 </body>
 
