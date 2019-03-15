@@ -5,6 +5,18 @@
       <title></title>
    </head>
    <body>
+      <script>
+         function Person(name){
+            this.name = name;
+            this.introduce=function(){
+               return 'My name is '+this.name;
+            }
+         }
+         var p=new Person('egoing');
+         document.write(p.introduce()+'<br/>');
 
+         var o = new Person('이용원');
+         document.write(o.introduce());
+      </script>
    </body>
 </html>
