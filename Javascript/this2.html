@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <title></title>
+</head>
+
+<body>
+   <script>
+      var o = {
+         func : function() {
+            if (o === this) {
+               document.write("o ===this");
+            }
+         }
+      }
+      o.func();
+   </script>
+</body>
+
+</html>
