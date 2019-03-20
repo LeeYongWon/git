@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+   </head>
+   <body>
+      <script>
+         // function Person(name){
+         //    this.name =name;
+         //    this.introduce=function(){
+         //       return 'My name is ' +this.name;
+         //    }
+         // }
+         //
+         // var p1 = new Person('egoing');
+         // document.write(p1.introduce()+"<br/>");
+
+         function Person(name){
+            this.name =name;
+         }
+         Person.prototype.name=null;
+         Person.prototype.introduce=function(){
+            return 'My name is' +this.name;
+         }
+
+         var p1 =new Person('egoing');
+         document.write(p1.introduce()+"<br/>");
+
+
+         function Programmer(name){
+            this.name=name;
+         }
+         Programmer.prototype = new Person();
+
+         var p1 =new Programmer('egoing');
+         document.write(p1.introduce()+"<br />");
+      </script>
+   </body>
+</html>
