@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <title></title>
+</head>
+
+<body>
+   <script>
+      function Person(name) {
+         return this.name = name;
+      }
+      Person.prototype.name = null;
+      Person.prototype.introduce = function() {
+         return 'My name is ' + this.name;
+      }
+
+      function Programmer(name) {
+         return this.name = name;
+      }
+      Programmer.prototype = new Person();
+      Programmer.prototype.coding = function() {
+         return "hello world";
+      }
+
+      function Designer(name) {
+         return this.name = name;
+      }
+      Designer.prototype = new Person();
+      Designer.prototype.design = function() {
+         return "beautiful";
+      }
+
+      var p1 = new Programmer('egoing');
+      document.write(p1.introduce() + '<br/>');
+      document.write(p1.coding() + '<br/>');
+
+      var p2=new Designer('leezhe');
+      document.write(p2.introduce()+'<br/>');
+      document.write(p2.design()+'<br/>');
+   </script>
+</body>
+
+</html>
