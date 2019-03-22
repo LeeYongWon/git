@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <title></title>
+</head>
+
+<body>
+   <script>
+      //object.keys()
+      var arr = ['a', 'b', 'c'];
+      document.write(Object.keys(arr));
+
+      //Object.prototype.toString()
+      var o = new Object();
+      console.log('o.toStirng', o.toString());
+
+      var a = new Array(1, 2, 3);
+      console.log('a.toStirng', a.toString());
+
+
+      Object.prototype.contain = function(needle) {
+         for (var name in this) {
+            if (this[name] === needle) {
+               return true;
+            }
+         }
+         return false;
+      }
+      var q = {
+         'name': 'egoing',
+         'city': 'seoul'
+      };
+      console.log(q.contain('egoing'));
+      var a = ['egoing', 'leezche', 'grapittie'];
+      console.log(a.contain('leezche'));
+   </script>
+</body>
+
+</html>
