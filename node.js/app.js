@@ -1,13 +1,18 @@
 var express = require('express');
 var app = express();
 app.use(express.static('public'));
-app.use(express.static('폴더경로'));
+
 
 app.get('/', function(req, res) {
    res.send('Hello home page');
 
 });
 app.get('/dynamic', function(req, res) {
+   var lis = '';
+   for (var i = 0; i < 5; i++) {
+      lis = lis + '<li>coding</li>';
+   }
+   var time = Date();
    var output = `
    <!DOCTYPE html>
    <html>
@@ -17,9 +22,15 @@ app.get('/dynamic', function(req, res) {
       </head>
       <body>
          Hello Dynamic
+         <ul>
+         ${lis}
+         ${time}
+         </ul>
       </body>
    </html>`;
+
    res.send(output);
+
 })
 app.get('/route', function(req, res) {
    res.send('Hello Router, <img src="/route.png">');
