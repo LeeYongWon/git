@@ -11,6 +11,8 @@ app.locals.pretty = true;
 app.get('/topic/new', function(req, res) {
    res.render('new');
 });
+//readdir을 이용해서 data_practice경로에 있는 files array에 저장된 파일들을 topics값에 files값을 넣고
+//view jade 파일에서 topics값을 이용해 each문으로 list를 내보낸다.
 app.get('/topic', function(req, res) {
    fs.readdir('data_practice', function(err, files) {
       console.log(files);
@@ -60,6 +62,7 @@ app.get('/topic/:id', function(req, res) {
    console.log('------------------');
    console.log('id값은' + id);
 });
+//파일을 저장
 app.post('/topic', function(req, res) {
    var title = req.body.title;
    var description = req.body.description;
