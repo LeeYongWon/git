@@ -67,7 +67,7 @@ db.query(sql, param).then(function(results){
 // db.query(sql, {
 //    params: {
 //       title: 'Express',
-//       desc: 'Express is framework for web'
+//       desc: '= is framework for web'
 //    }
 // }).then(function(results) {
 //    console.log(results);

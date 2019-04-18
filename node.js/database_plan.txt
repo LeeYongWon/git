@@ -1,0 +1,14 @@
+app.get('/topic',function(req, res){
+   res.render('view');
+   1.jade파일로 /topic이라는 주소로 들어왔을때 홈화면을 보여준다.
+})
+
+app.get('/topic/:id',function(res, req){
+   res.render('view');
+   2.topic 뒤에 아이디값으로 들어왔을때 접속
+})
+
+app.post('/topic/:id/edit',function(req, res){
+      res.render('edit')
+      3.아이디주소로 들어갔을때 post 방식으로 ㅈ
+})
