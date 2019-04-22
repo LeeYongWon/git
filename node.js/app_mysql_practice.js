@@ -48,6 +48,41 @@ app.post('/topic/add', function(req, res) {
       }
    });
 });
+app.post('/topic/:id/edit', function(req, res) {
+   var sql = 'UPDATE topic2 SET title=?,description=?,author=? WHERE id=?';
+   var id = req.params.id;
+   var title = req.body.title;
+   var description = req.body.description;
+   var author = req.body.author;
+   conn.query(sql, [title, description, author, id], function(err, results, fields) {
+      res.redirect('/topic/' + id );
+   });
+});
+app.get('/topic/:id/edit', function(req, res) {
+   var sql = 'SELECT * FROM topic2';
+   conn.query(sql, function(err, S_topic, fields) {
+      var id = req.params.id;
+      if (id) {
+         var sql = 'SELECT * FROM topic2 WHERE id=?';
+         var title = req.body.title;
+         var description = req.body.description;
+         var author = req.body.author;
+         conn.query(sql, [id], function(err, I_topic, fields) {
+            if (err) {
+               res.status(500).send('에러가 있어요');
+            } else {
+               res.render('edit', {
+                  S_topic: S_topic,
+                  I_topic: I_topic[0]
+               });
+            }
+         });
+      } else {
+         console.log('There is no id');
+         res.status(500).send('오류가 있어요');
+      }
+   });
+});
 //sql문을 읽어와서 list작성과 id값이 있을때 페이지읻동
 app.get(['/topic', '/topic/:id'], function(req, res) {
    var sql = 'SELECT * FROM topic2';

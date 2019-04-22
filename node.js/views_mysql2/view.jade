@@ -20,3 +20,6 @@ html
       ul
          li
             a(href='/topic/add') add
+         if I_topic
+            li
+               a(href='/topic/'+I_topic.id+'/edit') edit

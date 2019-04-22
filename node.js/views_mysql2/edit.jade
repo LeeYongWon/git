@@ -4,22 +4,22 @@ html
       meta(charset='utf-8')
    body
       h1
-         a(href='/topic') Server Side Javascript
-      ul
-         each topic in topics
+         a(href='/topic') Server Side Javascript edit
+      ul   
+         each s_topic in S_topic
             li
-               a(href='/topic/'+topic.id)= topic.TITLE
+               a(href='/topic/'+s_topic.title)= s_topic.title
       artcle
-         form(action='/topic/'+topic.id+'/edit' method='post')
+         form(action='/topic/'+I_topic.id+'/edit' method='post')
             p
-               input(type='text' name='TITLE' value=topic.TITLE placeholder='title')
+               input(type='text', name='title', placeholder='title', value=I_topic.title)
             p
-               textarea(name='description' placeholder='description')
-                  =topic.description
+               textarea(name='description' placeholder='description')= I_topic.description
             p
-               input(type='text' name='author' value=topic.author placeholder='author')
+               input(type='text', name='author', placeholder='author', value=I_topic.author)
             p
                input(type='submit')
       ul
          li
-            a(href='topic/add') add
+            a(href='/topic/add') add
+         
