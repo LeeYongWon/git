@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+   <meta charset="utf-8">
+   <title></title>
+</head>
+
+<body>
+   <p id="timezone"></p>
+   <input type="button" value="excute" id="execute">
+   <script>
+      document.querySelector('input').addEventListener('click', function(event) {
+         var xhr = new XMLHttpRequest();
+         xhr.open('GET', './time2.php');
+         xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+               var _tzs = xhr.responseText;
+               var tzs = _tzs.split(',');
+               var _str = '';
+               for (var i = 0; i < tzs.length; i++) {
+                  _str += '<li>' + tzs[i] + '</li>';
+               }
+               _str = '<ul>' + _str + '</ul>';
+               document.querySelector('#timezones').innerHTML = _str;
+            }
+         }
+         xhr.send();
+      })
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+   </head>
+   <body>
+      <input type="button" id="b" value="button">
+
+   <script>
+      var t =document.getElementById('b');
+      t.onclick=function(event){
+         alert('hello world  '+event.target.value);
+         console.dir(event);
+      }
+   </script>
+   </body>
+</html>

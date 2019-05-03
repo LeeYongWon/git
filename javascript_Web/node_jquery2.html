@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+   <meta charset="utf-8">
+   <title></title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+
+<body>
+   <div class="target" id ="target1">
+      content1
+   </div>
+
+   <div class="target" id ="target2">
+      content2
+   </div>
+
+   <input type="button" value="remove target1" id="btn1">
+   <input type="button" value="empty target2" id="btn2">
+
+   <script>
+      $('#btn1').click(function(){
+         $('#target1').remove();
+      });
+      $('#btn2').click(function(){
+         $('#target2').empty();
+      })
+
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+   </head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+   <body>
+   <a href="./demo1.html" id="t1">opentutorials</a>
+   <input type="checkbox" id="t2" checked="checked">
+   <script>
+   var t1=$('#t1');
+   console.log(t1.attr('href'));
+   console.log(t1.prop('href'));
+
+   var t2=$('#t2');
+   console.log(t2.attr('checked'));
+   console.log(t2.prop('checked'));
+   </script>
+   </body>
+</html>

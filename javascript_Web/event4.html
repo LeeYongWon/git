@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+   </head>
+   <body>
+      <input type="checkbox" value="on" id="prevent">
+      <a href="https://www.naver.com">asd</a>
+   <script>
+      document.querySelector('a').addEventListener('click', function(event){
+      if(document.getElementById('prevent').ckecked)
+         event.preventDefault();
+      });
+   </script>
+   </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+   <meta charset="utf-8">
+   <title></title>
+</head>
+
+<body>
+   <a id="anchor" href="http://opentutorials.org">opentutorials</a>
+   <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li id="list">JavaScript</li>
+   </ul>
+   <input type="button" id="button" value="button">
+   <script>
+      var anchor = document.getElementById('anchor');
+      console.log(anchor.constructor.name);
+      var list = document.getElementById('list');
+      console.log(list.constructor.name);
+      var button = document.getElementById('button');
+      console.log(button.constructor.name);
+   </script>
+</body>
+
+</html>

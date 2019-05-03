@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+   </head>
+   <body>
+      <form id="target" action="demo1.html">
+         <label for="name"> name </label><input type="name" id="name">
+         <input type="submit">
+      </form>
+   <script>
+      var t=document.getElementById('target');
+      t.addEventListener('submit', function(event){
+         if(document.getElementById('name').value.length===0){
+            alert('Name 필드의 값이 누락되었습니다');
+            event.preventDefault();
+         }
+      })
+   </script>
+   </body>
+</html>

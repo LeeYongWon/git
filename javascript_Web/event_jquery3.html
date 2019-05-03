@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+   <meta charset="utf-8">
+   <title></title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+
+<body>
+   <input type="text" id="target">
+   <p id="status"></p>
+   <script>
+   /*
+   $('#target').on('focus blur', function(e){
+      $('#status').html(e.type);
+   })
+   */
+   var handler=function(e){
+      $('#status').html(e.type);
+   }
+   $('#target').on({
+      'focus':handler,
+      'blur':handler
+   });
+   </script>
+</body>
+
+</html>

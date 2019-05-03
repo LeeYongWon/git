@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+   <meta charset="utf-8">
+   <title></title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+
+<body>
+   <input type="button" id="pure" value="pure">
+   <input type="button" id="jquery" value="jQuery">
+   <script>
+      //순수하게 구현했을떄
+      var t = document.getElementById('pure');
+      t.addEventListener('click', function(event) {
+         alert('pure');
+      });
+      $('#jquery').on('click', function(event) {
+         alert('jQuery');
+      });
+   </script>
+</body>
+
+</html>

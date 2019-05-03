@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+   <meta charset="utf-8">
+   <title></title>
+</head>
+
+<body id="start">
+   <ul>
+      <li><a href="./demo1.html">html</a></li>
+      <li><a href="./demo2.html">css</a></li>
+      <li><a href="./demo3.html">JavaScript</a></li>
+      <ul>
+         <li><a href="./demo4.html">JavaScript Core</a></li>
+         <li><a href="./demo5.html">DOM</a></li>
+         <li><a href="./demo6.html">Bom</a></li>
+      </ul>
+   </ul>
+   <script>
+   /*
+   function travers(target, callback){
+      if(target.nodeType===1){
+         callback(target);
+         var c =target.childNodes;
+         for(var i =0; i<c.length; i++){
+            travers(c[i], callback);
+         }
+      }
+   }
+   */
+   function traverse(target, callback){
+      if(target.nodeType===1){
+         if(target.nodeName==='A'){
+            callback(target);
+         }
+         var c =target.childNodes;
+         for(var i=0; i<c.length; i++){
+            traverse(c[i], callback);
+         }
+      }
+   }
+
+   traverse(document.getElementById('start'), function(elem){
+      console.log(elem);
+   })
+   </script>
+</body>
+
+</html>

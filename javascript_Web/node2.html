@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+   <meta charset="utf-8">
+   <title></title>
+</head>
+
+<body>
+   <ul id="target">
+      <li>html</li>
+      <li>css</li>
+   </ul>
+   <input type="button" onclick="callAppendChild()" value="appendChild()">
+   <input type="button" onclick="callInsertBefore()" value="callInsertBefore()">
+   <script>
+      function callAppendChild() {
+         var target = document.getElementById('target');
+         var li = document.createElement('li');
+         var text = document.createTextNode('Javascript');
+         li.appendChild(text);
+         target.appendChild(li);
+      }
+
+      function callInsertBefore() {
+         var target = document.getElementById('target');
+         var li = document.createElement('li');
+         var text =document.createTextNode('jquery');
+         console.log(li.appendChild(text));
+         li.appendChild(text);
+         target.insertBefore(li, target.firstChild);
+
+
+      }
+   </script>
+</body>
+
+</html>
