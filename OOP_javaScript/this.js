@@ -17,3 +17,4 @@ console.log("kim.sum(kim.first, kim.second) : " + kim.sum(kim.first, kim.second)
 //this를 사용한 방식
 console.log("kim.sum(this를 사용) : " + kim.sum());
 //github에 올라가나 보려고요
+console.log('git');
