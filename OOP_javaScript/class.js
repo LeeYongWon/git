@@ -5,20 +5,25 @@ class Person{
         this.first=first;
         this.second=second;
     }
-    minus(){
-        return this.first-this.second;
+    sum(){
+        return this.first+this.second;
     }
 }
-Person.prototype.sum=function(){
+class PersonPlus extends Person{
+    avg(){
+        return (this.first+this.second)/2;
+    }
+}
+Person.prototype.minus=function(){
     return this.first+this.second;
 }
 
-var kim= new Person('kim', 10, 20);
+var kim= new PersonPlus('kim', 10, 20);
 var lee= new Person('lee', 40, 20);
 console.log('kim', kim);
 
 //console.log("kim.sum(kim.first, kim,second)"), kim.sum(kim.first, kim.second);
 console.log("kim.sum()", kim.sum());   
+console.log("kim.avg()", kim.avg());
 console.log("lee.sum()", lee.sum());
-console.log("kim.minus()",kim.minus());
 console.log("lee.minus()",lee.minus());
