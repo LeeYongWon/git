@@ -12,6 +12,7 @@ function PersonPlus(name, first, second, third) {
 }
 // PersonPlus.prototype.__proto__=Person.prototype;
 PersonPlus.prototype = Object.create(Person.prototype);
+PersonPlus.prototype.constructor=PersonPlus;
 PersonPlus.prototype.avg = function () {
     return (this.first + this.second + this.third) / 3;
 }
@@ -19,5 +20,4 @@ PersonPlus.prototype.avg = function () {
 var kim = new PersonPlus('kim', 10, 20, 30);
 console.log('kim.sum() ', kim.sum());
 console.log('kim.avg() ', kim.avg());
-
-var foo = {name : "foo"}; // foo 라는 객체를 생성.
+console.log('kim.conssctructor ', kim.constructor);
